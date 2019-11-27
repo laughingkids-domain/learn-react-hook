@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const functions: Set<any> = new Set();
+const functions = new Set();
 
-const App = () => {
+const WithoutCallBack = () => {
   const [delta, setDelta] = useState(1);
   const [c, setC] = useState(0);
+
   const incrementDelta = () => setDelta(delta => delta + 1);
   const increment = () => setC(c => c + delta);
+
   functions.add(increment);
   functions.add(incrementDelta);
 
@@ -26,4 +28,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default WithoutCallBack;

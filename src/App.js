@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import WithoutCallBack from "./WithoutCallBack";
+import WithCallBackDependency from "./WithCallBackDependency";
+import WithCallBack from "./WithCallBack";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route path="/define-event-handler-in-component">
+        <WithoutCallBack />
+      </Route>
+      <Route path="/use-callback-event-handler-without-dependencies">
+        <WithCallBack />
+      </Route>
+      <Route path="/use-callback-event-handler">
+        <WithCallBackDependency />
+      </Route>
+    </Switch>
+  </Router>
+);
 
 export default App;
